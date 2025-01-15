@@ -1,14 +1,6 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body Styling */
-  body {
+body {
     font-family: 'Lato', sans-serif;
-    background: url('https://source.unsplash.com/1600x900/?romantic,flowers') no-repeat center center fixed;
+    background: url('/Users/arogelg/ALEX/ALEX PERSONAL PROJECTS/anniversary-website/assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -17,10 +9,9 @@
     color: white;
   }
   
-  /* Landing Page Styling */
   .landing-page {
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Subtle overlay */
+    background: rgba(0, 0, 0, 0.6); /* Slight overlay for readability */
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
@@ -30,7 +21,7 @@
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #f8d7da; /* Romantic pink shade */
+    color: #f8d7da;
   }
   
   .content p {
