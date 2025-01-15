@@ -3,19 +3,26 @@ body {
     margin: 0;
     padding: 0;
     background: #f7f7f7;
-    color: #333;
     text-align: center;
-  }
-  
-  header {
-    background: #ffdde1;
-    padding: 50px;
     color: #333;
   }
   
-  section {
-    padding: 20px;
-    margin: 20px auto;
+  h1, h2 {
+    color: #ff6f61;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #ff9a8b;
   }
   
   .photo-grid {

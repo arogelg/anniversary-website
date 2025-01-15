@@ -3,52 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3 Years of Us</title>
+  <title>Welcome</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Welcome, Beatrix ♥</h1>
-    <p>A journey through our love story...</p>
-    <button onclick="scrollToSection('message')">Start the Journey</button>
+    <p>Start your journey through our love story...</p>
+    <a href="message.html" class="button">Start the Journey</a>
   </header>
-
-  <section id="message">
-    <h2>A Special Note</h2>
-    <p>
-      Beatrix, these three years with you have been the most incredible of my life. 
-      You inspire me every day, and I can't wait to see what our future holds.
-    </p>
-  </section>
-
-  <section id="gallery">
-    <h2>Our Memories</h2>
-    <div class="photo-grid">
-      <img src="photo1.jpg" alt="Memory 1">
-      <img src="photo2.jpg" alt="Memory 2">
-      <img src="photo3.jpg" alt="Memory 3">
-    </div>
-  </section>
-
-  <section id="songs">
-    <h2>Our Songs</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID" 
-            width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-  </section>
-
-  <footer>
-    <p>"Love is not measured by time, but by moments like these."</p>
-    <button onclick="revealSurprise()">Check Your Bag!</button>
-  </footer>
-
-  <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function revealSurprise() {
-      alert('Look inside your bag for something special ♥');
-    }
-  </script>
 </body>
 </html>
