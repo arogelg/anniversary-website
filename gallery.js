@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Main Slider initialized:", mainSlider);
   
     let navSliderOptions = {
-      loop: true,
+      loop: false,
       loopAdditionalSlides: 10,
       speed: 1000,
       spaceBetween: 5,
