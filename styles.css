@@ -1,7 +1,9 @@
 body {
   font-family: 'Lato', sans-serif;
   background: url('assets/background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover; /* Ensures it covers the entire screen */
+  background-color: #000; /* Fallback for empty space */
+  background-blend-mode: darken; /* Mix with the black background */
   height: 100vh;
   display: flex;
   justify-content: center;
