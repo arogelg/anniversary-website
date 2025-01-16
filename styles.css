@@ -181,13 +181,13 @@ video {
   transition: transform 0.5s, opacity 0.5s; /* Smooth transitions */
 }
 
-/* Adjust positions dynamically */
+/* Adjust positions dynamically for a better fit */
 .gallery-page .image-slider img:nth-child(1) {
-  transform: translateX(-200px) rotateY(30deg);
+  transform: translateX(-150px) rotateY(20deg);
 }
 
 .gallery-page .image-slider img:nth-child(2) {
-  transform: translateX(-100px) rotateY(15deg);
+  transform: translateX(-75px) rotateY(10deg);
 }
 
 .gallery-page .image-slider img:nth-child(3) {
@@ -195,9 +195,9 @@ video {
 }
 
 .gallery-page .image-slider img:nth-child(4) {
-  transform: translateX(100px) rotateY(-15deg);
+  transform: translateX(75px) rotateY(-10deg);
 }
 
 .gallery-page .image-slider img:nth-child(5) {
-  transform: translateX(200px) rotateY(-30deg);
+  transform: translateX(150px) rotateY(-20deg);
 }
