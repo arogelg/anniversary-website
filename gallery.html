@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Memories</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="gallerystyle.scss"
 </head>
 
 <body>
@@ -23,54 +22,100 @@
     </nav>
   </div>
 
-  <div class="gallery-page">
-    <!-- Main Swiper -->
-    <div class="swiper-container main-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <figure class="slide-bgimg" style="background-image:url(assets/image1.jpg)">
-            <img src="assets/image1.jpg" class="entity-img" />
-          </figure>
-          <div class="content">
-            <p class="title">Our First Date</p>
-            <span class="caption">The day everything began...</span>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <figure class="slide-bgimg" style="background-image:url(assets/image2.jpg)">
-            <img src="assets/image2.jpg" class="entity-img" />
-          </figure>
-          <div class="content">
-            <p class="title">Vacation Memories</p>
-            <span class="caption">Our unforgettable trip!</span>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <figure class="slide-bgimg" style="background-image:url(assets/image3.jpg)">
-            <img src="assets/image3.jpg" class="entity-img" />
-          </figure>
-          <div class="content">
-            <p class="title">Celebrating Together</p>
-            <span class="caption">A milestone in our journey.</span>
-          </div>
+  <div class="swiper-container main-slider loading">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image1.JPG)">
+          <img src="assets/image1.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Our First Date</p>
+          <span class="caption">Where it all began..</span>
         </div>
       </div>
-      <!-- Navigation Buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image2.JPG)">
+          <img src="assets/image2.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Vacation pics</p>
+          <span class="caption">Loved taking you to Mexico.</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image3.JPG)">
+          <img src="assets/image3.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Mexico</p>
+          <span class="caption">Such a great time</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image4.JPG)">
+          <img src="assets/image4.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">IDK</p>
+          <span class="caption">Just testing.</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image5.JPG)">
+          <img src="assets/image5.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">test</p>
+          <span class="caption">Test</span>
+        </div>
+      </div>
     </div>
-
-    <!-- Thumbnail Swiper -->
-    <div class="swiper-container nav-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="assets/image1.jpg" class="thumbnail-img" />
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+  </div>
+  
+  <!-- Thumbnail navigation -->
+  <div class="swiper-container nav-slider loading">
+    <div class="swiper-wrapper" role="navigation">
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image1.JPG)">
+          <img src="assets/image1.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">1st Date</p>
         </div>
-        <div class="swiper-slide">
-          <img src="assets/image2.jpg" class="thumbnail-img" />
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image2.JPG)">
+          <img src="assets/image2.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Test</p>
         </div>
-        <div class="swiper-slide">
-          <img src="assets/image3.jpg" class="thumbnail-img" />
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image3.JPG)">
+          <img src="assets/image3.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Test</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image4.JPG)">
+          <img src="assets/image4.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Not last test</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg" style="background-image:url(assets/image5.JPG)">
+          <img src="assets/image5.JPG" class="entity-img" />
+        </figure>
+        <div class="content">
+          <p class="title">Test last</p>
         </div>
       </div>
     </div>
