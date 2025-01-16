@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   height: 100vh;
   overflow: hidden; /* Prevent scrolling */
   color: white;
@@ -41,8 +41,8 @@ video {
 }
 
 .content h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   color: #f8d7da;
 }
@@ -50,11 +50,11 @@ video {
 .content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #f0e6f6;
+  color: #fce4ec;
 }
 
 .btn {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
   color: white;
   font-weight: bold;
