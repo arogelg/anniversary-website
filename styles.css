@@ -1,23 +1,34 @@
 body {
   font-family: 'Lato', sans-serif;
+
+  /* Blurred Background */
   background: url('assets/background.jpg') no-repeat center center fixed;
-  background-size: contain; /* Keeps the original aspect ratio */
-  background-color: #000; /* Fallback for empty space */
-  background-blend-mode: darken; /* Mix with the black background */
-  height: 100vh;
+  background-size: cover; /* Fill screen with blur */
+  filter: blur(10px); /* Apply blur effect */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.landing-page {
+  position: relative; /* Allow content to overlay blurred background */
+  text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  height: 100vh;
+
+  /* Centered Main Image */
+  background: url('assets/background.jpg') no-repeat center center;
+  background-size: contain; /* Keep original aspect ratio */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
 }
-  
-  .landing-page {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6); /* Slight overlay for readability */
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-  }
   
   .content h1 {
     font-family: 'Dancing Script', cursive;
