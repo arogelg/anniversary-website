@@ -145,62 +145,30 @@ video {
 
 /* Styles specific to the gallery page */
 
-/* General Stylying for Gallery */
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Gallery Page Styling */
+.gallery-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  overflow: hidden;
 }
 
-.swiper-container {
+/* Main Slider */
+.main-slider {
   width: 80%;
   height: 100vh;
   float: left;
+  position: relative;
   transition: opacity 0.6s ease, transform 0.3s ease;
 }
 
-.swiper-container.nav-slider {
-  width: 20%;
-  padding-left: 5px;
-}
-
-.swiper-container.nav-slider .swiper-slide {
-  cursor: pointer;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-container.nav-slider .swiper-slide.swiper-slide-active {
-  opacity: 1;
-}
-
-.swiper-container.nav-slider .content {
-  width: 100%;
-}
-
-.swiper-container.nav-slider .content .title {
-  font-size: 20px;
-}
-
-.swiper-container:hover .swiper-button-prev,
-.swiper-container:hover .swiper-button-next {
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.swiper-container.loading {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.swiper-slide {
+.main-slider .swiper-slide {
   overflow: hidden;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-.swiper-slide .slide-bgimg {
+.main-slider .slide-bgimg {
   position: absolute;
   top: 0;
   left: 0;
@@ -210,50 +178,53 @@ video {
   background-size: cover;
 }
 
-.swiper-slide .entity-img {
-  display: none;
-}
-
-.swiper-slide .content {
+.main-slider .content {
   position: absolute;
-  top: 40%;
-  left: 0;
-  width: 50%;
-  padding-left: 5%;
-  color: #fff;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
-.swiper-slide .content .title {
-  font-size: 2.6em;
+.main-slider .content .title {
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 30px;
 }
 
-.swiper-slide .content .caption {
-  display: block;
-  font-size: 13px;
-  line-height: 1.4;
-  transform: translateX(50px);
+.main-slider .content .caption {
+  font-size: 1rem;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.7s ease;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.swiper-slide .content .caption.show {
-  transform: translateX(0);
+.main-slider .content .caption.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Thumbnail Slider */
+.nav-slider {
+  width: 20%;
+  height: 100vh;
+  float: left;
+  padding-left: 5px;
+}
+
+.nav-slider .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.nav-slider .swiper-slide-active {
   opacity: 1;
 }
 
-[class^="swiper-button-"] {
-  width: 44px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.swiper-button-prev {
-  transform: translateX(50px);
-}
-
-.swiper-button-next {
-  transform: translateX(-50px);
+.nav-slider .thumbnail-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
