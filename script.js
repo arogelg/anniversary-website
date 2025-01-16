@@ -34,29 +34,27 @@ document.addEventListener('click', (event) => {
   }
 });
 
-let galleryCurrentIndex = 2; // Start with the center image
+let currentIndex = Math.floor(images.length / 2); // Start with the center image
 
-function updateGallerySlider() {
-  galleryImages.forEach((img, index) => {
-    const offset = index - galleryCurrentIndex;
-    img.style.transform = `translateX(${offset * 100}px) rotateY(${offset * -15}deg)`;
+// Function to update image positions
+function updateSlider() {
+  images.forEach((img, index) => {
+    const offset = index - currentIndex; // Calculate distance from the center image
+    img.style.transform = `translateX(${offset * 150}px) rotateY(${offset * -15}deg)`;
     img.style.opacity = Math.abs(offset) > 2 ? 0 : 1; // Dim distant images
+    img.style.pointerEvents = Math.abs(offset) > 2 ? 'none' : 'auto'; // Disable interaction for dimmed images
   });
 }
 
-// Add scroll functionality
+// Add scroll functionality for the slider
 document.addEventListener('wheel', (e) => {
-  if (e.target.closest('.gallery-page')) { // Ensure it only applies in the gallery page
-    if (e.deltaY > 0) {
-      galleryCurrentIndex = Math.min(galleryCurrentIndex + 1, galleryImages.length - 1);
-    } else {
-      galleryCurrentIndex = Math.max(galleryCurrentIndex - 1, 0);
-    }
-    updateGallerySlider();
+  if (e.deltaY > 0) {
+    currentIndex = Math.min(currentIndex + 1, images.length - 1); // Scroll down: move right
+  } else {
+    currentIndex = Math.max(currentIndex - 1, 0); // Scroll up: move left
   }
+  updateSlider();
 });
 
-// Initialize the gallery slider
-if (gallerySlider) {
-  updateGallerySlider();
-}
+// Initialize the slider
+updateSlider();
