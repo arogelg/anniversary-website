@@ -3,8 +3,6 @@ const toggleMusic = document.getElementById('toggle-music');
 const video = document.getElementById('background-video');
 const sideMenu = document.querySelector('.side-menu');
 const menuTrigger = document.querySelector('.menu-trigger');
-const slider = document.querySelector('.image-slider');
-const images = Array.from(slider.children);
 
 toggleMusic.addEventListener('click', () => {
   if (music.paused) {
@@ -34,27 +32,92 @@ document.addEventListener('click', (event) => {
   }
 });
 
-let currentIndex = Math.floor(images.length / 2); // Start with the center image
+// Params
+let mainSliderSelector = '.main-slider',
+    navSliderSelector = '.nav-slider',
+    interleaveOffset = 0.5;
 
-// Function to update image positions
-function updateSlider() {
-  images.forEach((img, index) => {
-    const offset = index - currentIndex; // Calculate distance from the center image
-    img.style.transform = `translateX(${offset * 150}px) rotateY(${offset * -15}deg)`;
-    img.style.opacity = Math.abs(offset) > 2 ? 0 : 1; // Dim distant images
-    img.style.pointerEvents = Math.abs(offset) > 2 ? 'none' : 'auto'; // Disable interaction for dimmed images
-  });
-}
+// Main Slider
+let mainSliderOptions = {
+      loop: true,
+      speed:1000,
+      autoplay:{
+        delay:3000
+      },
+      loopAdditionalSlides: 10,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        init: function(){
+          this.autoplay.stop();
+        },
+        imagesReady: function(){
+          this.el.classList.remove('loading');
+          this.autoplay.start();
+        },
+        slideChangeTransitionEnd: function(){
+          let swiper = this,
+              captions = swiper.el.querySelectorAll('.caption');
+          for (let i = 0; i < captions.length; ++i) {
+            captions[i].classList.remove('show');
+          }
+          swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
+        },
+        progress: function(){
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            let slideProgress = swiper.slides[i].progress,
+                innerOffset = swiper.width * interleaveOffset,
+                innerTranslate = slideProgress * innerOffset;
+           
+            swiper.slides[i].querySelector(".slide-bgimg").style.transform =
+              "translateX(" + innerTranslate + "px)";
+          }
+        },
+        touchStart: function() {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+        setTransition: function(speed) {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-bgimg").style.transition =
+              speed + "ms";
+          }
+        }
+      }
+    };
+let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 
-// Add scroll functionality for the slider
-document.addEventListener('wheel', (e) => {
-  if (e.deltaY > 0) {
-    currentIndex = Math.min(currentIndex + 1, images.length - 1); // Scroll down: move right
-  } else {
-    currentIndex = Math.max(currentIndex - 1, 0); // Scroll up: move left
-  }
-  updateSlider();
-});
+// Navigation Slider
+let navSliderOptions = {
+      loop: true,
+      loopAdditionalSlides: 10,
+      speed:1000,
+      spaceBetween: 5,
+      slidesPerView: 5,
+      centeredSlides : true,
+      touchRatio: 0.2,
+      slideToClickedSlide: true,
+      direction: 'vertical',
+      on: {
+        imagesReady: function(){
+          this.el.classList.remove('loading');
+        },
+        click: function(){
+          mainSlider.autoplay.stop();
+        }
+      }
+    };
+let navSlider = new Swiper(navSliderSelector, navSliderOptions);
 
-// Initialize the slider
-updateSlider();
+// Matching sliders
+mainSlider.controller.control = navSlider;
+navSlider.controller.control = mainSlider;

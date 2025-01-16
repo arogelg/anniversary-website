@@ -5,22 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Memories</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-  <!-- Gallery Page Content -->
-  <div class="gallery-page">
-    <div class="slider-container">
-      <div class="image-slider">
-        <img src="assets/pictures-website/AD5FC26B-7A6C-438C-96D9-3B4D7215D2E2.JPG" alt="Image 1">
-        <img src="assets/pictures-website/d5517f57-b174-4011-b7e0-8436b591471d.JPG" alt="Image 2">
-        <img src="assets/pictures-website/e69a203c-9c3c-4e36-8e22-a4aab2b730f4.JPG" alt="Image 3">
-        <img src="assets/pictures-website/fb8cd811-c7be-4d4f-8ba8-92c003f6d2ce.JPG" alt="Image 4">
-        <img src="assets/pictures-website/IMG_0518.JPG" alt="Image 5">
-      </div>
-      <a href="songs.html" class="button">Next: Our Songs</a>
-    </div>
-  </div>
-
   <!-- Side Menu -->
   <div class="side-menu">
     <nav>
@@ -34,6 +21,69 @@
     </nav>
   </div>
 
+  <!-- Main Swiper -->
+  <div class="gallery-page">
+    <div class="swiper-container main-slider">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <figure class="slide-bgimg" style="background-image:url(assets/pictures-website/AD5FC26B-7A6C-438C-96D9-3B4D7215D2E2.JPG)">
+            <img src="assets/pictures-website/AD5FC26B-7A6C-438C-96D9-3B4D7215D2E2.JPG" class="entity-img" />
+          </figure>
+          <div class="content">
+            <p class="title">Our First Date</p>
+            <span class="caption">The day everything began...</span>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <figure class="slide-bgimg" style="background-image:url(assets/pictures-website/d5517f57-b174-4011-b7e0-8436b591471d.JPG)">
+            <img src="assets/pictures-website/d5517f57-b174-4011-b7e0-8436b591471d.JPG" class="entity-img" />
+          </figure>
+          <div class="content">
+            <p class="title">Vacation Memories</p>
+            <span class="caption">Our unforgettable trip!</span>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <figure class="slide-bgimg" style="background-image:url(assets/pictures-website/IMG_0518.JPG)">
+            <img src="assets/pictures-website/IMG_0518.JPGg" class="entity-img" />
+          </figure>
+          <div class="content">
+            <p class="title">Celebrating Together</p>
+            <span class="caption">A milestone in our journey.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Thumbnail Swiper -->
+    <div class="swiper-container nav-slider">
+      <div class="swiper-wrapper">
+        <!-- Thumbnail 1 -->
+        <div class="swiper-slide">
+          <img src="assets/pictures-website/AD5FC26B-7A6C-438C-96D9-3B4D7215D2E2.JPG" class="thumbnail-img" />
+        </div>
+        <!-- Thumbnail 2 -->
+        <div class="swiper-slide">
+          <img src="assets/pictures-website/d5517f57-b174-4011-b7e0-8436b591471d.JPG" class="thumbnail-img" />
+        </div>
+        <!-- Thumbnail 3 -->
+        <div class="swiper-slide">
+          <img src="assets/pictures-website/IMG_0518.JPG" class="thumbnail-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
