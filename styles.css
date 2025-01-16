@@ -71,3 +71,74 @@ video {
   transform: scale(1.1);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px; /* Width of the menu */
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  transform: translateX(100%); /* Initially hidden */
+  transition: transform 0.4s ease;
+  z-index: 10;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu:hover {
+  transform: translateX(0); /* Slide in on hover */
+}
+
+.side-menu .menu-trigger {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  width: 40px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 50px 20px;
+  margin: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+  color: #ff6b81;
+}
+
+
+.side-menu {
+  transform: translateX(100%); /* Hidden by default */
+  transition: transform 0.4s ease;
+}
+
+.side-menu.open {
+  transform: translateX(0); /* Slide in when open */
+}
+
+.side-menu .menu-trigger {
+  left: -40px; /* Keep the trigger outside the view */
+  transition: background 0.3s ease;
+}
+
+.side-menu .menu-trigger:hover {
+  background: #ff6b81;
+}
