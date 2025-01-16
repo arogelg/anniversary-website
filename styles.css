@@ -168,6 +168,7 @@ video {
   height: 100vh;
   float: left;
   transition: opacity 0.6s ease, transform 0.3s ease;
+  border: 2px solid red;
 }
 .swiper-container.nav-slider {
   width: 20%;
@@ -200,6 +201,7 @@ video {
 
 .swiper-slide {
   overflow: hidden;
+  border: 2px dashed blue;
 }
 .swiper-slide .slide-bgimg {
   position: absolute;
