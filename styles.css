@@ -1,6 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
-    background: url('/Users/arogelg/ALEX/ALEX PERSONAL PROJECTS/anniversary-website/assets/background.jpg') no-repeat center center fixed;
+    background: url('assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
