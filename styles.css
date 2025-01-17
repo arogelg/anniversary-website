@@ -106,7 +106,7 @@ video {
 }
 
 .message-content {
-  background: rgba(0, 0, 0, 0.337); /* More opaque for contrast */
+  background: rgba(0, 0, 0, 0.4); /* More opaque for contrast */
   padding: 50px 80px;
   border-radius: 20px;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
@@ -237,14 +237,7 @@ video {
   float: left;
 }
 
-.main-slider {
-  width: 80%; /* Takes up 80% of the screen width */
-  height: 100vh; /* Full viewport height */
-  float: left; /* Align to the left */
-  position: relative; /* Keep the slider positioned correctly */
-  overflow: hidden;
-}
-
+/* Thumbnail Slider Styles */
 
 .nav-slider {
   width: 20%; /* Take 20% of the screen width */
@@ -252,10 +245,12 @@ video {
   float: right; /* Align to the right */
   padding-left: 5px; /* Add spacing on the left */
   overflow: hidden; /* Prevent overflow issues */
+  overflow-y: auto;
+  scrollbar-width: thin; /* For modern browsers */
 }
 
 .nav-slider .swiper-slide {
-  height: calc(100% / 4); /* Show 5 thumbnails at a time */
+  height: calc(100% / 5); /* 5 thumbnails visible at a time */
   cursor: pointer;
   opacity: 0.4; /* Lower opacity for inactive thumbnails */
   transition: opacity 0.3s ease;
@@ -276,7 +271,21 @@ video {
   color: white;
 }
 
+.nav-slider .swiper-slide:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
 /* Main Slider Styles */
+
+.main-slider {
+  width: 80%; /* Takes up 80% of the screen width */
+  height: 100vh; /* Full viewport height */
+  float: left; /* Align to the left */
+  position: relative; /* Keep the slider positioned correctly */
+  overflow: hidden;
+}
+
 .main-slider .swiper-slide {
   position: relative;
   overflow: hidden;
@@ -305,12 +314,12 @@ video {
 }
 
 .main-slider .swiper-slide .content .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 .main-slider .swiper-slide .content .caption {
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.5s ease, transform 0.5s ease;

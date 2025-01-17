@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Thumbnail Slider
     let navSlider = new Swiper(navSliderSelector, {
       loop: true,
-      slidesPerView: 4, // Show 5 thumbnails at a time
+      slidesPerView: 4, // Show 4 thumbnails at a time
       spaceBetween: 4,
       direction: "vertical", // Align vertically
       centeredSlides: true, // Center the active thumbnail
