@@ -197,3 +197,33 @@ video {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Adjust the width of the thumbnail slider */
+.swiper-container.nav-slider {
+  width: 20%; /* Set thumbnail width */
+  height: 100vh;
+  float: right; /* Align it to the right */
+  padding-left: 5px;
+}
+
+/* Style individual thumbnails */
+.swiper-container.nav-slider .swiper-slide {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+  opacity: 1; /* Highlight active thumbnail */
+}
+
+/* Add spacing between thumbnails */
+.swiper-container.nav-slider .swiper-slide .content {
+  padding: 10px;
+}
+
+.swiper-container.nav-slider .swiper-slide .content .title {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
