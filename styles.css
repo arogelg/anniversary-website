@@ -153,10 +153,11 @@ video {
 }
 
 .main-slider {
-  width: 80%; /* Take 80% of the screen width */
-  height: 100vh; /* Full height */
-  float: left;
-  overflow: hidden; /* Prevent overflow issues */
+  width: 80%; /* Takes up 80% of the screen width */
+  height: 100vh; /* Full viewport height */
+  float: left; /* Align to the left */
+  position: relative; /* Keep the slider positioned correctly */
+  overflow: hidden;
 }
 
 
@@ -168,12 +169,11 @@ video {
   overflow: hidden; /* Prevent overflow issues */
 }
 
-/* Thumbnail Slider Styles */
 .nav-slider .swiper-slide {
-  cursor: pointer;
-  opacity: 0.3; /* Make inactive thumbnails less visible */
-  transition: opacity 0.3s ease;
   height: calc(100% / 5); /* Show 5 thumbnails at a time */
+  cursor: pointer;
+  opacity: 0.4; /* Lower opacity for inactive thumbnails */
+  transition: opacity 0.3s ease;
 }
 
 
@@ -201,6 +201,7 @@ video {
   text-align: center;
 }
 
+
 .main-slider .swiper-slide .slide-bgimg {
   position: absolute;
   top: 0;
@@ -208,8 +209,8 @@ video {
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: cover;
-  z-index: -1;
+  background-size: cover; /* Ensures the image fully covers the area */
+  z-index: -1; /* Places the background image behind the content */
 }
 
 .main-slider .swiper-slide .content {
