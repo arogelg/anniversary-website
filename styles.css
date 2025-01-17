@@ -23,6 +23,12 @@ body {
   z-index: -1; /* Ensures video is behind all content */
 }
 
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the screen */
+}
+
 /* Message Page Video Background */
 .message-video-container {
   position: fixed;
@@ -34,10 +40,11 @@ body {
   z-index: -2; /* Push background further back */
 }
 
-video {
+mvideo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the screen */
+  object-fit: cover;
+  filter: blur(4px) brightness(0.6); /* Add blur and dim video for subtlety */
 }
 
 /* Overlay to push the background into the "back" */
@@ -47,7 +54,7 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay */
   z-index: -1;
 }
 
@@ -106,19 +113,20 @@ video {
 }
 
 .message-content {
-  background: rgba(255, 255, 255, 0.1); /* Subtle light overlay */
+  background: rgba(0, 0, 0, 0.8); /* More opaque for contrast */
   padding: 50px 80px;
   border-radius: 20px;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
-  color: #ffebee; /* Soft pink */
+  color: #f8d7da; /* Soft pink */
   max-width: 800px;
 }
 
 .message-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem; /* Larger for prominence */
+  font-size: 4rem;
   margin-bottom: 20px;
-  color: #f8d7da; /* Soft pink for headings */
+  color: #f8d7da;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
 }
 
 .message-content h2 {
@@ -126,12 +134,15 @@ video {
   font-size: 2rem;
   margin-bottom: 25px;
   color: #fce4ec;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for improved visibility */
 }
 
 .message-content p {
-  font-size: 1.5rem; /* Enlarged for readability */
-  line-height: 1.8; /* Improved spacing */
+  font-size: 1.5rem;
+  line-height: 1.8;
   margin-bottom: 30px;
+  color: #ffffff; /* White for better contrast */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ensure readability */
 }
 
 .message-content .button {
