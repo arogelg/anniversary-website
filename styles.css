@@ -153,23 +153,29 @@ video {
 }
 
 .main-slider {
-  width: 80%; /* Main slider takes 80% width */
+  width: 80%; /* Take 80% of the screen width */
+  height: 100vh; /* Full height */
+  float: left;
+  overflow: hidden; /* Prevent overflow issues */
 }
 
+
 .nav-slider {
-  width: 20%; /* Thumbnail slider takes 20% width */
+  width: 20%; /* Take 20% of the screen width */
+  height: 100vh; /* Full height */
   float: right; /* Align to the right */
-  height: 100%; /* Full height */
-  overflow: hidden;
-  padding-left: 5px;
+  padding-left: 5px; /* Add spacing on the left */
+  overflow: hidden; /* Prevent overflow issues */
 }
 
 /* Thumbnail Slider Styles */
 .nav-slider .swiper-slide {
   cursor: pointer;
-  opacity: 0.4; /* Make inactive thumbnails less visible */
+  opacity: 0.3; /* Make inactive thumbnails less visible */
   transition: opacity 0.3s ease;
+  height: calc(100% / 5); /* Show 5 thumbnails at a time */
 }
+
 
 .nav-slider .swiper-slide.swiper-slide-active {
   opacity: 1; /* Highlight active thumbnail */
@@ -177,13 +183,12 @@ video {
 
 .nav-slider .swiper-slide .content {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .nav-slider .swiper-slide .content .title {
-  font-size: 16px;
+  font-size: 14px;
   color: white;
-  text-align: center;
 }
 
 /* Main Slider Styles */
