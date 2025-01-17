@@ -146,63 +146,20 @@ video {
 
 /* SLIDER STYLES*/
 
-[class^=swiper-button-] {
-  transition: all 0.3s ease;
-}
-
-.swiper-slide {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* General Swiper Styles */
 .swiper-container {
-  width: 80%;
-  height: 100vh;
-  float: left;
-  transition: opacity 0.6s ease, transform 0.3s ease;
-  border: 2px solid red;
-}
-.swiper-container.nav-slider {
-  width: 20%;
-  padding-left: 5px;
-}
-.swiper-container.nav-slider .swiper-slide {
-  cursor: pointer;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-.swiper-container.nav-slider .swiper-slide.swiper-slide-active {
-  opacity: 1;
-}
-.swiper-container.nav-slider .swiper-slide .content {
   width: 100%;
-}
-.swiper-container.nav-slider .swiper-slide .content .title {
-  font-size: 20px;
-}
-.swiper-container:hover .swiper-button-prev,
-.swiper-container:hover .swiper-button-next {
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-.swiper-container.loading {
-  opacity: 0;
-  visibility: hidden;
+  height: 100vh; /* Full height */
 }
 
 .swiper-slide {
-  overflow: hidden;
-  border: 2px dashed blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
+
 .swiper-slide .slide-bgimg {
   position: absolute;
   top: 0;
@@ -211,46 +168,32 @@ video {
   height: 100%;
   background-position: center;
   background-size: cover;
+  z-index: -1;
 }
+
 .swiper-slide .entity-img {
-  display: none;
+  display: none; /* Hides the placeholder image */
 }
+
 .swiper-slide .content {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  width: 50%;
-  padding-left: 5%;
-  color: #fff;
+  position: relative;
+  color: white;
+  z-index: 1;
 }
+
 .swiper-slide .content .title {
-  font-size: 2.6em;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 30px;
 }
+
 .swiper-slide .content .caption {
-  display: block;
-  font-size: 13px;
-  line-height: 1.4;
-  transform: translateX(50px);
+  font-size: 1rem;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.7s ease;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.swiper-slide .content .caption.show {
-  transform: translateX(0);
+
+.swiper-slide-active .caption {
   opacity: 1;
-}
-
-[class^=swiper-button-] {
-  width: 44px;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.swiper-button-prev {
-  transform: translateX(50px);
-}
-
-.swiper-button-next {
-  transform: translateX(-50px);
+  transform: translateX(0);
 }
