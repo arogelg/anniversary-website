@@ -170,7 +170,7 @@ video {
 }
 
 .nav-slider .swiper-slide {
-  height: calc(100% / 5); /* Show 5 thumbnails at a time */
+  height: calc(100% / 4); /* Show 5 thumbnails at a time */
   cursor: pointer;
   opacity: 0.4; /* Lower opacity for inactive thumbnails */
   transition: opacity 0.3s ease;
@@ -253,8 +253,7 @@ video {
 }
 
 /* Debug Borders (Remove after testing) */
-/* Uncomment this block if you need to debug the layout */
-/*
+
 .main-slider {
   border: 2px solid red;
 }
@@ -262,4 +261,3 @@ video {
 .nav-slider {
   border: 2px solid blue;
 }
-*/
