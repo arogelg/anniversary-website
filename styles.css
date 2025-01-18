@@ -243,6 +243,8 @@ video {
   width: 20%; /* Take 20% of the screen width */
   height: 100vh; /* Full height */
   float: right; /* Align to the right */
+  display: flex; /* Add flexbox for consistent alignment */
+  flex-direction: column; /* Stack thumbnails vertically */
   padding-left: 5px; /* Add spacing on the left */
   overflow: hidden; /* Prevent overflow issues */
   overflow-y: auto;
@@ -250,20 +252,46 @@ video {
 }
 
 .nav-slider .swiper-slide {
-  height: calc(100% / 5); /* 5 thumbnails visible at a time */
+  height: calc(100% / 5); /* Divide vertical space evenly for 5 thumbnails */
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  opacity: 0.4; /* Lower opacity for inactive thumbnails */
+  opacity: 0.4; /* Dim inactive thumbnails */
   transition: opacity 0.3s ease;
+  overflow: hidden; /* Prevent overflow issues */
+  text-align: center; /* Center text */
 }
+
+.nav-slider .swiper-slide .slide-bgimg {
+  width: 100%;
+  height: 70%; /* Image takes up 70% of the thumbnail height */
+  background-position: center;
+  background-size: cover; /* Ensure proper scaling */
+}
+
+.nav-slider .swiper-slide img {
+  width: 100%; /* Make thumbnails fit */
+  height: auto; /* Keep aspect ratio */
+  object-fit: cover; /* Ensure the image doesn't stretch */
+}
+
 
 
 .nav-slider .swiper-slide.swiper-slide-active {
-  opacity: 1; /* Highlight active thumbnail */
+  opacity: 1; /* Fully visible active thumbnail */
 }
 
 .nav-slider .swiper-slide .content {
-  text-align: center;
+  height: 30%; /* Text takes up 30% of the thumbnail height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
+  color: white;
+  font-size: 14px; /* Smaller font for thumbnails */
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); /* Add text contrast */
 }
 
 .nav-slider .swiper-slide .content .title {
@@ -295,6 +323,13 @@ video {
   text-align: center;
 }
 
+.main-slider .swiper-slide .slide-bgimg {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover; /* Prevent stretching or repeating */
+  z-index: -1;
+}
 
 .main-slider .swiper-slide .slide-bgimg {
   position: absolute;
@@ -305,6 +340,10 @@ video {
   background-position: center;
   background-size: cover; /* Ensures the image fully covers the area */
   z-index: -1; /* Places the background image behind the content */
+}
+
+.main-slider .swiper-slide img {
+  display: none; /* Hide the placeholder image (only use background) */
 }
 
 .main-slider .swiper-slide .content {
