@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 3000,
       },
       grabCursor: true,
-      watchSlidesProgress: true,
+      watchSlidesVisibility: true, // Fixes visibility issues
+      watchSlidesProgress: true, // Ensures smooth progress tracking
+      loopAdditionalSlides: 5, // Ensures enough slides are preloaded
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -20,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Thumbnail Slider
     let navSlider = new Swiper(navSliderSelector, {
       loop: true,
-      slidesPerView: 4, // Show 4 thumbnails at a time
-      spaceBetween: 4,
+      slidesPerView: 5, // Show 5 thumbnails at a time
+      spaceBetween: 5,
       direction: "vertical", // Align vertically
       centeredSlides: true, // Center the active thumbnail
       slideToClickedSlide: true, // Navigate to slide on thumbnail click

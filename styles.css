@@ -249,6 +249,13 @@ video {
   overflow: hidden; /* Prevent overflow issues */
   overflow-y: auto;
   scrollbar-width: thin; /* For modern browsers */
+  position: relative;
+}
+
+.nav-slider .swiper-wrapper {
+  height: 100%; /* Ensure wrapper stretches to full height */
+  display: flex;
+  flex-direction: column; /* Stack thumbnails vertically */
 }
 
 .nav-slider .swiper-slide {
