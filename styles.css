@@ -401,3 +401,105 @@ video {
 .nav-slider {
   border: 2px solid blue;
 }
+
+
+
+
+/* SONGS PAG CSS*/
+
+/* Our Songs Page Specific Styles */
+.songs-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dark Elegant Background */
+.songs-page .image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/dark-elegant-background.jpg') center/cover no-repeat;
+  z-index: -1;
+  filter: brightness(0.4); /* Dim the background to highlight content */
+}
+
+/* Songs Content Box */
+.songs-content {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 50px 80px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.7);
+  color: #ffebee;
+  max-width: 800px;
+}
+
+.songs-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #f8d7da;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.songs-content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+/* Spotify Code Section */
+.spotify-code img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.spotify-code img:hover {
+  transform: scale(1.05);
+}
+
+/* Call-to-Action Button */
+.songs-content .button {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 15px 40px;
+  background: linear-gradient(45deg, #ff6b81, #f8a5c2);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.songs-content .button:hover {
+  background: linear-gradient(45deg, #f8a5c2, #ff6b81);
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .songs-content h1 {
+    font-size: 3rem;
+  }
+
+  .songs-content p {
+    font-size: 1.2rem;
+  }
+
+  .spotify-code img {
+    width: 90%;
+  }
+}
