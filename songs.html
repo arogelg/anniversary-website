@@ -4,87 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Songs 🎵</title>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Video Background -->
-  <div class="video-container">
-    <video id="background-video" autoplay muted loop playsinline>
-      <source src="assets/music-background.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-
-  <!-- Songs Section -->
-  <section class="songs-section">
-    <div class="songs-content">
-      <h1>Our Songs 🎵</h1>
-      <p>
-        Every song in this playlist holds a special place in my heart, just like you.  
-        Scan the code below to relive our most beautiful moments through music. 💖
-      </p>
-      <div class="spotify-code">
-        <img src="assets/spotify-code-placeholder.png" alt="Spotify Playlist Code">
-      </div>
-      <a href="https://open.spotify.com/playlist/your-playlist-link" class="button" target="_blank">
-        Listen Now
-      </a>
-    </div>
-  </section>
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Songs 🎵</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="songs-page">
+
+          <!-- Side Menu -->
+          <nav class="side-menu">
+            <div class="menu-trigger"></div>
+            <ul>
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="message.html">Special Message</a></li>
+            <li><a href="gallery.html">Memory Gallery</a></li>
+            <li><a href="songs.html" class="active">Our Songs</a></li>
+            <li><a href="finale.html">Surprise Finale</a></li>
+            </ul>
+        </nav>
     <!-- Dark Elegant Background -->
     <div class="image-container"></div>
 
-      <!-- Side Menu -->
-    <nav class="side-menu">
-        <div class="menu-trigger"></div>
-        <ul>
-        <li><a href="index.html">Welcome</a></li>
-        <li><a href="message.html">Special Message</a></li>
-        <li><a href="gallery.html">Memory Gallery</a></li>
-        <li><a href="songs.html" class="active">Our Songs</a></li>
-        <li><a href="finale.html">Surprise Finale</a></li>
-        </ul>
-    </nav>
     <!-- Songs Content Section -->
     <div class="songs-content">
-        <h1>Our Songs 🎵</h1>
-        <p>
-          Every song in this playlist holds a special place in my heart, just like you.  
-          Play it and relive our most beautiful moments through music. 💖
-        </p>
-        <div class="spotify-player">
-          <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/playlist/1mKXdjJS59qQMehKDFrSGh?utm_source=generator" 
-            width="100%" height="152" 
-            frameBorder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-          </iframe>
-        </div>
-        <a href="https://open.spotify.com/playlist/1mKXdjJS59qQMehKDFrSGh" class="button" target="_blank">
-          Open in Spotify
-        </a>
+      <h1>Our Songs <span>🎵</span></h1>
+      <p>
+        Every song in this playlist holds a special place in my heart, just like you.  
+        Play it and relive our most beautiful moments through music. 💖
+      </p>
+      <div class="spotify-player">
+        <iframe style="border-radius:12px" 
+          src="https://open.spotify.com/embed/playlist/1mKXdjJS59qQMehKDFrSGh?utm_source=generator" 
+          width="100%" height="200" 
+          frameBorder="0" 
+          allowfullscreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy">
+        </iframe>
       </div>
+      <a href="https://open.spotify.com/playlist/1mKXdjJS59qQMehKDFrSGh" class="button" target="_blank">
+        Open in Spotify
+      </a>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>
