@@ -440,6 +440,7 @@ video {
   max-width: 800px;
 }
 
+/* Songs Heading */
 .songs-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
@@ -448,6 +449,7 @@ video {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/* Songs Paragraph */
 .songs-content p {
   font-size: 1.5rem;
   line-height: 1.8;
@@ -455,18 +457,13 @@ video {
   color: #ffffff;
 }
 
-/* Spotify Code Section */
-.spotify-code img {
-  width: 60%;
-  max-width: 400px;
-  border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+/* Spotify Player */
+.spotify-player iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 152px;
+  border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
-}
-
-.spotify-code img:hover {
-  transform: scale(1.05);
 }
 
 /* Call-to-Action Button */
@@ -481,6 +478,8 @@ video {
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .songs-content .button:hover {
@@ -499,7 +498,7 @@ video {
     font-size: 1.2rem;
   }
 
-  .spotify-code img {
+  .spotify-player iframe {
     width: 90%;
   }
 }
