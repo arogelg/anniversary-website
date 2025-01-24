@@ -392,7 +392,7 @@ video {
   visibility: visible;
 }
 
-/* Debug Borders (Remove after testing) */
+/* Debug Borders (Remove after testing) 
 
 .main-slider {
   border: 2px solid red;
@@ -402,10 +402,12 @@ video {
   border: 2px solid blue;
 }
 
+*/
 
 
 
-/* SONGS PAG CSS*/
+
+/* SONGS PAGE CSS*/
 
 /* Our Songs Page Specific Styles */
 .songs-page {
