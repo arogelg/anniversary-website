@@ -500,3 +500,43 @@ video {
     width: 90%;
   }
 }
+
+/* Button Group */
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Button Styles */
+.button {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 15px 40px;
+  background: linear-gradient(45deg, #ff6b81, #f8a5c2);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #f8a5c2, #ff6b81);
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling the End the Journey button */
+.button.end-journey {
+  background: linear-gradient(45deg, #6a0572, #ab47bc);
+}
+
+.button.end-journey:hover {
+  background: linear-gradient(45deg, #ab47bc, #6a0572);
+}
