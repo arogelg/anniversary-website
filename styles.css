@@ -543,3 +543,88 @@ video {
 .button.end-journey:hover {
   background: linear-gradient(45deg, #ab47bc, #6a0572);
 }
+
+
+/* FINAL PAGE */
+
+
+
+
+/* Finale Page Styling */
+.finale-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('assets/dark-elegant-pattern.jpg') center/cover no-repeat;
+  color: white;
+  padding: 40px;
+}
+
+/* Message Styling */
+.finale-message {
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+.finale-message h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #f8d7da;
+  margin-bottom: 15px;
+}
+
+.finale-message p {
+  font-size: 1.8rem;
+  color: #ffebee;
+  line-height: 1.8;
+}
+
+/* Gift Box Image */
+.gift-box img {
+  width: 350px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gift-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Tiffany Bag Image */
+.gift-bag img {
+  width: 250px;
+  max-width: 80%;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Final Message */
+.final-message {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  color: #f8d7da;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.gift-box img, .gift-bag img {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
