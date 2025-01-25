@@ -548,7 +548,6 @@ video {
 /* FINAL PAGE */
 
 
-
 .finale-page {
   position: relative;
   height: 100vh;
@@ -557,19 +556,46 @@ video {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #1c1c1c 30%, #2e2e2e 100%);
+  background: linear-gradient(135deg, #1c1c1c 20%, #2e2e2e 100%);
   color: white;
   padding: 40px;
 }
 
-/* Romantic Message */
+/* Floating Gift Images Fix */
+.gift-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-gift {
+  width: 300px;
+  max-width: 80%;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5)); /* Soft shadow */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  animation: floatAnimation 3s infinite ease-in-out alternate;
+}
+
+/* Floating Effect Animation */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+/* Fix message and alignment */
 .finale-message {
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.6);
-  margin-bottom: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
   animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -581,85 +607,11 @@ video {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
-.finale-message p {
+.final-message p {
   font-size: 1.5rem;
   color: #ffebee;
-  line-height: 1.8;
-}
-
-/* Floating Gift Images */
-.gift-container {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
-}
-
-.floating-gift {
-  width: 300px;
-  max-width: 90%;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
-  animation: floatAnimation 3s infinite ease-in-out alternate;
-}
-
-.floating-gift:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0px 15px 40px rgba(255, 255, 255, 0.2));
-}
-
-/* Floating Animation */
-@keyframes floatAnimation {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-15px);
-  }
-}
-
-/* Final Message */
-.final-message {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   margin-top: 40px;
-  font-size: 1.8rem;
-  color: #f8d7da;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-  animation: fadeIn 2.5s ease-in-out;
-}
-
-/* Side Menu */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 50px 20px;
-  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.4);
-}
-
-.side-menu nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.side-menu nav ul li {
-  margin-bottom: 20px;
-}
-
-.side-menu nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.side-menu nav ul li a:hover {
-  color: #ff6b81;
 }
 
 /* Fade-in animation */
