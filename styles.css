@@ -549,8 +549,6 @@ video {
 
 
 
-
-/* Finale Page Styling */
 .finale-page {
   position: relative;
   height: 100vh;
@@ -559,54 +557,65 @@ video {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('assets/dark-elegant-pattern.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, #1c1c1c 30%, #2e2e2e 100%);
   color: white;
   padding: 40px;
 }
 
-/* Message Styling */
+/* Romantic Message */
 .finale-message {
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
-  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.6);
+  margin-bottom: 50px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .finale-message h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #f8d7da;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 .finale-message p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #ffebee;
   line-height: 1.8;
 }
 
-/* Gift Box Image */
-.gift-box img {
-  width: 350px;
+/* Floating Gift Images */
+.gift-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-gift {
+  width: 300px;
   max-width: 90%;
-  border-radius: 15px;
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
+  animation: floatAnimation 3s infinite ease-in-out alternate;
 }
 
-.gift-box img:hover {
+.floating-gift:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0px 15px 40px rgba(255, 255, 255, 0.2));
 }
 
-/* Tiffany Bag Image */
-.gift-bag img {
-  width: 250px;
-  max-width: 80%;
-  margin-top: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4);
+/* Floating Animation */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
 }
 
 /* Final Message */
@@ -617,14 +626,50 @@ video {
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 2.5s ease-in-out;
 }
 
-.gift-box img, .gift-bag img {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards;
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 50px 20px;
+  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.4);
 }
 
+.side-menu nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu nav ul li {
+  margin-bottom: 20px;
+}
+
+.side-menu nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.side-menu nav ul li a:hover {
+  color: #ff6b81;
+}
+
+/* Fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
