@@ -231,14 +231,6 @@ video {
 
 /* SLIDER STYLES*/
 
-/* General Swiper Styles */
-.swiper-container {
-  height: 100vh; /* Full height */
-  float: left;
-}
-
-/* Thumbnail Slider Styles */
-
 body {
   background-color: black;
   color: white;
@@ -252,49 +244,70 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  perspective: 1000px; /* Adds depth */
 }
 
 .carousel {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 700px; /* Make it wider */
+  height: 500px; /* Adjust for larger images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform-style: preserve-3d;
-  animation: rotateCarousel 20s linear infinite;
 }
 
 .carousel-item {
   position: absolute;
-  width: 250px;
-  height: 350px;
+  width: 400px; /* Bigger images */
+  height: 300px;
+  transition: transform 1s ease-in-out, opacity 1s;
   transform-origin: center;
-  transition: transform 0.8s ease-in-out;
 }
 
 .carousel-item img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .caption {
   position: absolute;
-  bottom: -30px;
+  bottom: -40px;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-item.active .caption {
   opacity: 1;
 }
 
-@keyframes rotateCarousel {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
+/* Positioning for center & side images */
+.carousel-item.center {
+  transform: translateX(0) scale(1.2); /* Make center image bigger */
+  z-index: 3;
 }
 
+.carousel-item.left {
+  transform: translateX(-250px) scale(0.8);
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.carousel-item.right {
+  transform: translateX(250px) scale(0.8);
+  z-index: 2;
+  opacity: 0.6;
+}
+
+/* Hide images behind the visible area */
+.carousel-item.hidden {
+  opacity: 0;
+  transform: translateX(0) scale(0.5);
+}
 
 /* Debug Borders (Remove after testing) 
 

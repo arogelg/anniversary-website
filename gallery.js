@@ -3,12 +3,18 @@ const items = document.querySelectorAll(".carousel-item");
 const totalItems = items.length;
 
 function updateCarousel() {
-  const angle = 360 / totalItems;
-  
   items.forEach((item, index) => {
-    const rotation = angle * (index - currentIndex);
-    item.style.transform = `rotateY(${rotation}deg) translateZ(300px)`;
-    item.classList.toggle("active", index === currentIndex);
+    item.classList.remove("center", "left", "right", "hidden");
+
+    if (index === currentIndex) {
+      item.classList.add("center");
+    } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+      item.classList.add("left");
+    } else if (index === (currentIndex + 1) % totalItems) {
+      item.classList.add("right");
+    } else {
+      item.classList.add("hidden");
+    }
   });
 }
 
@@ -17,5 +23,5 @@ function nextImage() {
   updateCarousel();
 }
 
-setInterval(nextImage, 5000); // Auto-scroll every 5 seconds
+setInterval(nextImage, 5000); // Rotate every 5 seconds
 updateCarousel();
