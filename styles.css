@@ -291,11 +291,10 @@ body {
 }
 
 .carousel-item img {
-  max-width: 100%; /* Ensures landscape images don’t stretch too much */
-  max-height: 65vh; /* Prevents images from being too tall */
-  object-fit: contain; /* Ensures the full image is visible */
-  border-radius: 12px; /* Keeps a smooth rounded look */
-
+  max-width: 90%; /* Prevents landscape images from stretching */
+  max-height: 55vh; /* Ensures portrait images don’t get too tall */
+  object-fit: cover; /* Ensures images fill the area nicely */
+  border-radius: 12px;
 }
 
 /* 📝 Caption styling */
