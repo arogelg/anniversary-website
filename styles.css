@@ -245,15 +245,19 @@ body {
   height: 100vh;
 }
 
-/* ✨ Beautiful Title */
+/* ✨ Beautiful Title - Always at the Top */
 .gallery-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Playfair Display', serif;
   font-size: 50px;
   font-weight: 700;
   text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.5);
   letter-spacing: 1.5px;
-  margin-bottom: 20px; /* Add spacing between title and carousel */
 }
+
 
 /* 🖼️ Center the carousel */
 .carousel-container {
@@ -292,10 +296,11 @@ body {
 
 .carousel-item img {
   max-width: 90%; /* Prevents landscape images from stretching */
-  max-height: 55vh; /* Ensures portrait images don’t get too tall */
+  max-height: 45vh; /* Ensures portrait images don’t get too tall */
   object-fit: cover; /* Ensures images fill the area nicely */
   border-radius: 12px;
 }
+
 
 /* 📝 Caption styling */
 .caption {
