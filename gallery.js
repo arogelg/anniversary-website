@@ -4,7 +4,7 @@ const totalItems = items.length;
 
 function updateCarousel() {
   items.forEach((item, index) => {
-    item.classList.remove("center", "left", "right", "hidden");
+    item.classList.remove("center", "left", "right", "far-left", "far-right", "hidden");
 
     if (index === currentIndex) {
       item.classList.add("center");
@@ -12,6 +12,10 @@ function updateCarousel() {
       item.classList.add("left");
     } else if (index === (currentIndex + 1) % totalItems) {
       item.classList.add("right");
+    } else if (index === (currentIndex - 2 + totalItems) % totalItems) {
+      item.classList.add("far-left");
+    } else if (index === (currentIndex + 2) % totalItems) {
+      item.classList.add("far-right");
     } else {
       item.classList.add("hidden");
     }

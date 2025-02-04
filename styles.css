@@ -230,12 +230,12 @@ video {
 
 
 /* SLIDER STYLES*/
-
 body {
   background-color: black;
   color: white;
   font-family: 'Arial', sans-serif;
   text-align: center;
+  overflow: hidden;
 }
 
 .carousel-container {
@@ -244,13 +244,13 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  perspective: 1000px; /* Adds depth */
+  perspective: 1200px;
 }
 
 .carousel {
   position: relative;
-  width: 700px; /* Make it wider */
-  height: 500px; /* Adjust for larger images */
+  width: 80vw;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,8 +259,8 @@ body {
 
 .carousel-item {
   position: absolute;
-  width: 400px; /* Bigger images */
-  height: 300px;
+  width: 450px; /* Bigger images */
+  height: 350px;
   transition: transform 1s ease-in-out, opacity 1s;
   transform-origin: center;
 }
@@ -269,59 +269,70 @@ body {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.4);
 }
 
+/* Caption styles */
 .caption {
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  color: white;
 }
 
-.carousel-item.active .caption {
-  opacity: 1;
-}
-
-/* Positioning for center & side images */
+/* Center image (biggest) */
 .carousel-item.center {
-  transform: translateX(0) scale(1.2); /* Make center image bigger */
+  transform: translateX(0) scale(1.3);
   z-index: 3;
 }
 
+.carousel-item.center .caption {
+  opacity: 1;
+}
+
+/* Side images (stacking effect) */
 .carousel-item.left {
-  transform: translateX(-250px) scale(0.8);
+  transform: translateX(-300px) scale(1) rotateY(20deg);
   z-index: 2;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .carousel-item.right {
-  transform: translateX(250px) scale(0.8);
+  transform: translateX(300px) scale(1) rotateY(-20deg);
   z-index: 2;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* Hide images behind the visible area */
+/* Further side images (deeper perspective) */
+.carousel-item.far-left {
+  transform: translateX(-500px) scale(0.8) rotateY(30deg);
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.carousel-item.far-right {
+  transform: translateX(500px) scale(0.8) rotateY(-30deg);
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* Hidden images (not visible) */
 .carousel-item.hidden {
   opacity: 0;
   transform: translateX(0) scale(0.5);
 }
 
-/* Debug Borders (Remove after testing) 
-
-.main-slider {
-  border: 2px solid red;
+/* Faded text effect for background captions */
+.carousel-item.left .caption,
+.carousel-item.right .caption,
+.carousel-item.far-left .caption,
+.carousel-item.far-right .caption {
+  opacity: 0.3;
+  font-size: 14px;
 }
-
-.nav-slider {
-  border: 2px solid blue;
-}
-
-*/
-
-
 
 
 /* SONGS PAGE CSS*/
