@@ -265,11 +265,11 @@ body {
 /* 🖼️ Center the carousel */
 .carousel-container {
   position: absolute;
-  top: 50%;
+  top: 55%;  /* Adjusted to better align images */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80vw;
-  height: 70vh; /* Keeps the images centered */
+  height: 65vh; /* Adjusted to keep spacing correct */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,12 +299,12 @@ body {
 
 .carousel-item img {
   max-width: 90%;
-  max-height: 45vh; /* Slightly increased for better balance */
+  max-height: 50vh;  /* Ensure images aren’t too big */
   object-fit: cover;
   border-radius: 12px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* Always centers the image */
+  position: relative;  /* Change from absolute to relative */
+  display: block;
+  margin: auto;  /* Centers images properly */
 }
 
 
