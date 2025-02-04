@@ -278,6 +278,8 @@ body {
 
 /* 📷 Image Styling */
 .carousel-item {
+  opacity: 1;
+  display: block;
   position: absolute;
   width: 450px;
   height: 350px;

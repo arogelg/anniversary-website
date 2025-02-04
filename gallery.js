@@ -80,5 +80,10 @@ document.addEventListener("touchend", (event) => {
   resetAutoScroll();
 });
 
+document.querySelectorAll(".carousel-item img").forEach((img, index) => {
+  console.log(`Image ${index + 1}: ${img.src}`);
+});
+
+
 // Initialize the carousel
 updateCarousel();
