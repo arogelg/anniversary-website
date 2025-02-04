@@ -19,6 +19,14 @@ function updateCarousel() {
     } else {
       item.classList.add("hidden");
     }
+
+    // Handle captions visibility
+    const caption = item.querySelector(".caption");
+    if (index === currentIndex) {
+      caption.style.opacity = "1"; // Show caption for center image
+    } else {
+      caption.style.opacity = "0"; // Hide other captions
+    }
   });
 }
 
