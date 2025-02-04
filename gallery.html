@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Side Menu -->
@@ -20,111 +18,32 @@
     </ul>
   </nav>
 
-  <!-- Main Slider -->
-  <a href="songs.html" class="button" target="_blank">
-    Next page 
-  </a>
-  <div class="swiper-container main-slider loading">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image1.JPG)">
-          <img src="assets/image1.JPG" alt="First Memory" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">First Memory</p>
-          <span class="caption">Our first unforgettable moment together.</span>
-        </div>
+  <!-- 3D Rotating Gallery -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item" style="--i:0;">
+        <img src="assets/image1.JPG" alt="First Memory">
+        <p class="caption">First Memory – Our first unforgettable moment together.</p>
       </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image2.JPG)">
-          <img src="assets/image2.JPG" alt="A Walk to Remember" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">A Walk to Remember</p>
-          <span class="caption">Cherished moments from our favorite walk.</span>
-        </div>
+      <div class="carousel-item" style="--i:1;">
+        <img src="assets/image2.JPG" alt="A Walk to Remember">
+        <p class="caption">A Walk to Remember – Cherished moments from our favorite walk.</p>
       </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image3.JPG)">
-          <img src="assets/image3.JPG" alt="Adventures Await" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Adventures Await</p>
-          <span class="caption">Exploring the world, one memory at a time.</span>
-        </div>
+      <div class="carousel-item" style="--i:2;">
+        <img src="assets/image3.JPG" alt="Adventures Await">
+        <p class="caption">Adventures Await – Exploring the world, one memory at a time.</p>
       </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image4.JPG)">
-          <img src="assets/image4.JPG" alt="Forever Together" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Forever Together</p>
-          <span class="caption">Moments that make our hearts full.</span>
-        </div>
+      <div class="carousel-item" style="--i:3;">
+        <img src="assets/image4.JPG" alt="Forever Together">
+        <p class="caption">Forever Together – Moments that make our hearts full.</p>
       </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image5.JPG)">
-          <img src="assets/image5.JPG" alt="Dreams to Come" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Dreams to Come</p>
-          <span class="caption">Looking forward to our beautiful future together.</span>
-        </div>
-      </div>
-    </div>
-    <!-- Navigation Buttons -->
-    <div class="swiper-button-prev swiper-button-white"></div>
-    <div class="swiper-button-next swiper-button-white"></div>
-  </div>
-
-  <!-- Thumbnail Slider -->
-  <div class="swiper-container nav-slider loading">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image1.JPG)">
-          <img src="assets/image1.JPG" alt="Thumbnail for First Memory" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">First Memory</p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image2.JPG)">
-          <img src="assets/image2.JPG" alt="Thumbnail for A Walk to Remember" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">A Walk to Remember</p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image3.JPG)">
-          <img src="assets/image3.JPG" alt="Thumbnail for Adventures Await" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Adventures Await</p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image4.JPG)">
-          <img src="assets/image4.JPG" alt="Thumbnail for Forever Together" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Forever Together</p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(assets/image5.JPG)">
-          <img src="assets/image5.JPG" alt="Thumbnail for Dreams to Come" class="entity-img">
-        </figure>
-        <div class="content">
-          <p class="title">Dreams to Come</p>
-        </div>
+      <div class="carousel-item" style="--i:4;">
+        <img src="assets/image5.JPG" alt="Dreams to Come">
+        <p class="caption">Dreams to Come – Looking forward to our beautiful future together.</p>
       </div>
     </div>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="gallery.js"></script>
 </body>
 </html>
