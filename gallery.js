@@ -7,45 +7,44 @@ function updateCarousel() {
   items.forEach((item, index) => {
     item.classList.remove("center", "left", "right", "far-left", "far-right", "hidden");
 
-    if (index === currentIndex) {
+    let position = (index - currentIndex + totalItems) % totalItems; 
+
+    if (position === 0) {
       item.classList.add("center");
-    } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
-      item.classList.add("left");
-    } else if (index === (currentIndex + 1) % totalItems) {
+    } else if (position === 1) {
       item.classList.add("right");
-    } else if (index === (currentIndex - 2 + totalItems) % totalItems) {
-      item.classList.add("far-left");
-    } else if (index === (currentIndex + 2) % totalItems) {
+    } else if (position === 2) {
       item.classList.add("far-right");
+    } else if (position === totalItems - 1) {
+      item.classList.add("left");
+    } else if (position === totalItems - 2) {
+      item.classList.add("far-left");
     } else {
       item.classList.add("hidden");
     }
 
-    // Handle captions visibility
+    // Show caption only for center image
     const caption = item.querySelector(".caption");
-    caption.style.opacity = index === currentIndex ? "1" : "0";
+    caption.style.opacity = position === 0 ? "1" : "0";
   });
 }
 
-// Move to the next image
 function nextImage() {
   currentIndex = (currentIndex + 1) % totalItems;
   updateCarousel();
 }
 
-// Move to the previous image
 function prevImage() {
   currentIndex = (currentIndex - 1 + totalItems) % totalItems;
   updateCarousel();
 }
 
-// Reset auto-scroll when user interacts
 function resetAutoScroll() {
   clearInterval(autoScroll);
   autoScroll = setInterval(nextImage, 5000);
 }
 
-// Click event to move manually
+// Allow clicking left/right images
 items.forEach((item, index) => {
   item.addEventListener("click", () => {
     if (item.classList.contains("right")) {
@@ -58,13 +57,11 @@ items.forEach((item, index) => {
 });
 
 // Scroll event for manual navigation
-let touchStartX = 0;
-
 document.addEventListener("wheel", (event) => {
   if (event.deltaY > 0) {
-    nextImage(); // Scroll down moves forward
+    nextImage();
   } else {
-    prevImage(); // Scroll up moves backward
+    prevImage();
   }
   resetAutoScroll();
 });
@@ -76,9 +73,9 @@ document.addEventListener("touchstart", (event) => {
 document.addEventListener("touchend", (event) => {
   let touchEndX = event.changedTouches[0].clientX;
   if (touchStartX - touchEndX > 50) {
-    nextImage(); // Swipe left moves forward
+    nextImage();
   } else if (touchStartX - touchEndX < -50) {
-    prevImage(); // Swipe right moves backward
+    prevImage();
   }
   resetAutoScroll();
 });
