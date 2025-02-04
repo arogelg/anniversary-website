@@ -238,35 +238,33 @@ body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 /* ✨ Beautiful Title */
 .gallery-title {
   font-family: 'Playfair Display', serif;
-  font-size: 50px;  /* Bigger */
+  font-size: 50px;
   font-weight: 700;
-  text-align: center;
-  margin-top: 40px;
-  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.5);  /* Soft glow */
-  letter-spacing: 1.5px;  /* Elegant spacing */
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  margin-bottom: 20px; /* Add spacing between title and carousel */
 }
 
-/* 🖼️ Carousel container */
+/* 🖼️ Center the carousel */
 .carousel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
-  overflow: hidden;
+  flex-grow: 1; /* Pushes it to the center */
   perspective: 1200px;
 }
 
-/* 🏞️ Carousel styling */
+/* 📦 Carousel */
 .carousel {
   position: relative;
   width: 80vw;
