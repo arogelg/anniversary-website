@@ -289,22 +289,27 @@ body {
 /* 📷 Image Styling */
 .carousel-item {
   opacity: 1;
-  display: block;
+  display: flex;
   position: absolute;
   width: 450px;
-  height: 350px;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
   transition: transform 1s ease-in-out, opacity 1s;
   transform-origin: center;
 }
 
 .carousel-item img {
-  max-width: 90%;
-  max-height: 50vh;  /* Ensure images aren’t too big */
-  object-fit: cover;
+  max-width: 90%;  /* Prevents overly wide images */
+  max-height: 50vh; /* Keeps images from being too tall */
+  height: auto; /* Ensures proper scaling */
+  object-fit: cover; /* Crops images slightly but keeps balance */
   border-radius: 12px;
-  position: relative;  /* Change from absolute to relative */
   display: block;
-  margin: auto;  /* Centers images properly */
+  margin: auto; /* Centers horizontally */
+  position: absolute;
+  top: 50%;  /* Centers vertically */
+  transform: translateY(-50%); /* Ensures middle alignment */
 }
 
 
