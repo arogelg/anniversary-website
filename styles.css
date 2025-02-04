@@ -257,12 +257,15 @@ body {
 
 /* 🖼️ Center the carousel */
 .carousel-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 70vh; /* Keeps the images centered */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Pushes it to the center */
-  perspective: 1200px;
 }
 
 /* 📦 Carousel */
@@ -288,10 +291,11 @@ body {
 }
 
 .carousel-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.4);
+  max-width: 100%; /* Ensures landscape images don’t stretch too much */
+  max-height: 65vh; /* Prevents images from being too tall */
+  object-fit: contain; /* Ensures the full image is visible */
+  border-radius: 12px; /* Keeps a smooth rounded look */
+
 }
 
 /* 📝 Caption styling */
